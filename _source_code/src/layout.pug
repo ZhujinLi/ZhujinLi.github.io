@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= head_title
+    link(rel="stylesheet", href="/main.css")
+  body
+    div#jumbotron.jumbotron.jumbotron-fluid.text-monospace
+      div.container(style="position: relative")
+        h1
+          a(href="/") DemoHut
+        a.text-secondary(href="/about_me.json", target="_blank", style="position: absolute; right: 15px; bottom: 0px;") About me
+
+    div.container
+      if backLink
+        form(action= backLink).text-right
+          button.btn.btn-outline-primary(type='submit') ← all posts
+
+      .display-4
+        p= subj_title
+
+      div#content
+        block content
+
+      if srcLink
+        a.text-right(href= srcLink, target='_blank')
+          p → view src
+
+      .hr-theme-slash-2
+        .hr-line.l
+        .hr-icon
+          a(href='https://github.com/ZhujinLi')
+            img(src='/links/github.png', height='32px')
+        .hr-icon
+          a(href='https://www.cnblogs.com/xrst')
+            img(src='/links/cnblogs.png', height='32px')
+        .hr-icon
+          a(href='https://codepen.io/zjli')
+            img(src='/links/codepen.png', height='32px')
+        .hr-icon
+          a(href='https://www.shadertoy.com/user/zjli')
+            img(src='/links/shadertoy.png', height='32px')
+        .hr-line.r
+
+    script(src="/main.js", type="module")
